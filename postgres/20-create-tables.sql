@@ -1,0 +1,10 @@
+\connect persons program
+
+CREATE TABLE IF NOT EXISTS people
+(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    address VARCHAR(1000) NOT NULL,
+    work VARCHAR(1000) NOT NULL
+);

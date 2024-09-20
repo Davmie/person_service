@@ -14,5 +14,14 @@ services:
     ports:
       - "5432:5432"
 
+  app:
+    build: .
+    container_name: app
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+
 volumes:
   db-data:
