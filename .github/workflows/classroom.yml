@@ -54,12 +54,12 @@ jobs:
 
       - name: Build, Push and Deploy to Heroku
         id: heroku
-        uses: patrickkkim/docker-compose-multiple-apps-heroku-deploy@v1.1
+        uses: akhileshns/heroku-deploy@v3.4.6
         with:
-          email: ${{ secrets.HEROKU_EMAIL }}
-          api_key: ${{ secrets.HEROKU_API_KEY }}
-          docker_compose_file: './docker-compose.yml'
-          heroku_apps: '[{"imagename":"library/postgres:13","appname":"postgres","apptype":"web"},{"imagename":"app","appname":"app","apptype":"web"}]'
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: person-service
+          usedocker: true
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
