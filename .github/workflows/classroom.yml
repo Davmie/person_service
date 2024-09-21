@@ -53,7 +53,7 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy and wait
-        uses: ashishkujoy/render-ci-deploy@v1.0.1
+        uses: ashishkujoy/render-ci-deploy@v1.0.5
         with:
             service-id: ${{ secrets.RENDER_SERVICE_ID }}
             service-key: ${{ secrets.RENDER_SERVICE_KEY }}
