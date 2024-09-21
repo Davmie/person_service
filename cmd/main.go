@@ -17,7 +17,7 @@ import (
 )
 
 var prodCfgPg = postgres.Config{DSN: "host=dpg-crn8te08fa8c738bekog-a.frankfurt-postgres.render.com user=program password=ZbuzttiIWI6DpKrwhYryoHhYm7NjeLQ9 dbname=persons_1jwg port=5432"}
-https://api.render.com/deploy/srv-crn8mdm8ii6s73emhlog?key=R8RFtRytd4s
+
 // postgresql://program:ZbuzttiIWI6DpKrwhYryoHhYm7NjeLQ9@dpg-crn8te08fa8c738bekog-a.frankfurt-postgres.render.com/persons_1jwg
 func main() {
 	zapLogger := zap.Must(zap.NewDevelopment())
