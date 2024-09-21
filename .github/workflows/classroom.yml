@@ -52,14 +52,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build, Push and Deploy to Heroku
-        id: heroku
-        uses: akhileshns/heroku-deploy@v3.4.6
+      - name: Deploy and wait
+        uses: ashishkujoy/render-ci-deploy@v1.0.1
         with:
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: person-service
-          usedocker: true
+            service-id: ${{ secrets.RENDER_SERVICE_ID }}
+            service-key: ${{ secrets.RENDER_SERVICE_KEY }}
+            api-key: ${{ secrets.RENDER_API_KEY }}
+            max-deployment-wait-ms: 360000
+            delay-in-ms: 10000
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
